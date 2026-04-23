@@ -1,9 +1,9 @@
-from teacher_agent import agent
+#from agent.simple_agent import agent
+from agent.search_agent import agent
 
 
 def main():
-    print("Hello from agent-demo!")
-    result = agent.run_sync("What is current Time?")
+    result = agent.run_sync("List top 10 news about US-iran war")
     print("Agent: ", result.output)
 
 
