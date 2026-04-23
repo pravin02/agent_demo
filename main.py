@@ -1,11 +1,13 @@
-#from agent.simple_agent import agent
-from agent.search_agent import agent
+# from agent.simple_agent import agent
+# from agent.search_agent import agent
+from agent.wikipedia_agent import agent
 
 
 def main():
-    result = agent.run_sync("List top 10 news about US-iran war")
+    question = "Who is the Kishor Kumar?"
+    print(f"User: {question}")
+    result = agent.run_sync(question)
     print("Agent: ", result.output)
-
 
 
 if __name__ == "__main__":
