@@ -4,7 +4,7 @@ from pydantic_ai.models.ollama import OllamaModel
 
 from pydantic_ai.providers.ollama import OllamaProvider
 
-from pydantic_ai.capabilities import WebSearch, Thinking
+from pydantic_ai.capabilities import WebSearch, WebFetch, Thinking
 
 import os
 from dotenv import load_dotenv
@@ -19,8 +19,6 @@ load_dotenv()
 model_name = os.getenv("MODEL_NAME") or ""
 base_url = os.getenv("OLLAMA_BASE_URL")
 
-print(f"Model Name {model_name} and base Url {base_url}")
-
 model = OllamaModel(model_name, provider=OllamaProvider(base_url))
 
 wikipedia_api_wrapper = WikipediaAPIWrapper(
@@ -34,6 +32,8 @@ wikipedia_tool = tool_from_langchain(wikipedia)
  """
 agent = Agent(
     model,
-    capabilities=[Thinking(), WebSearch()],
+    capabilities=[Thinking(), WebSearch(), WebFetch()],
     tools=[wikipedia_tool],
 )
+
+app = agent.to_web()

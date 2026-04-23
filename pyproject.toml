@@ -8,6 +8,6 @@ dependencies = [
     "langchain-community>=0.4.1",
     "ollama>=0.6.1",
     "pydantic-ai>=1.86.0",
-    "pydantic-ai-slim[duckduckgo]>=1.86.0",
+    "pydantic-ai-slim[duckduckgo,web,web-fetch]>=1.86.0",
     "wikipedia>=1.4.0",
 ]
