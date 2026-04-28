@@ -10,14 +10,14 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-model = os.getenv("MODEL_NAME")
-base_url = os.getenv("OLLAMA_BASE_URL")
+model = os.getenv("MODEL_NAME") or ""
+base_url = os.getenv("MODEL_BASE_URL")
 
 print(f"model {model} and base url : {base_url}")
 
 
 model = OllamaModel(
-    model_name="gemma4", provider=OllamaProvider(base_url="http://localhost:11434/v1")
+    model_name=model, provider=OllamaProvider(base_url=base_url)
 )
 
 agent = Agent(

@@ -17,7 +17,7 @@ import wikipedia
 load_dotenv()
 
 model_name = os.getenv("MODEL_NAME") or ""
-base_url = os.getenv("OLLAMA_BASE_URL")
+base_url = os.getenv("MODEL_BASE_URL")
 
 model = OllamaModel(model_name, provider=OllamaProvider(base_url))
 
