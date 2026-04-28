@@ -15,4 +15,4 @@ if __name__ == "__main__":
 
 # to run will use pydantic ui
 # import agent.to_web()
-# uvicorn main:app --host 127.0.0.1 --port 7932
+# uvicorn pydantic_ui:app --host 127.0.0.1 --port 7932
