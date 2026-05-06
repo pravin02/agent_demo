@@ -15,3 +15,5 @@ Custom wikipedia agent has various tools like duckduckgo_search, WebFetch, Wikip
 In development mode: `fastapi dev main.py`
 
 In development mode: `fastapi prod main.py`
+
+[Tutor Agent example](tutor-agent/README.md)
