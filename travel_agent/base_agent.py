@@ -23,5 +23,3 @@ class BaseAgent:
 
         response = self.llm.invoke(messages)
         return response.content
-
-
